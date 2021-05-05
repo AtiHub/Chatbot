@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ChatbotDataService } from '../chatbot-data.service';
+import { ICategory } from '../data-types';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  public categories: ICategory[] = [];
+
+  constructor(private _chatbotDataService: ChatbotDataService) { }
 
   ngOnInit(): void {
+    this._chatbotDataService.getCategories().subscribe(data => this.categories = data, err => console.log(err));
   }
 
 }

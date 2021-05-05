@@ -19,4 +19,8 @@ export class ChatbotDataService {
   getCountries(): Observable<IQuestion[]>{
     return this.http.get<IQuestion[]>(this.questionsUrl);
   }
+
+  getCategories(): Observable<ICategory[]>{
+    return this.http.get<ICategory[]>(this.categoriesUrl);
+  }
 }

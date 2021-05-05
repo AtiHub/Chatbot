@@ -1,4 +1,49 @@
-div.main {
+.main {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    width: 100%;
+}
+
+.category {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    width: 20%;
+    background-color: white;
+}
+
+app-category {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    width: 100%;
+}
+
+.suggestion {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    width: 20%;
+    background-color: blue;
+}
+
+app-suggestion {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    width: 100%;
+}
+
+.chatbot {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    width: 60%;
+    background-color: red;
+}
+
+app-chatbot {
     display: flex;
     flex-flow: row nowrap;
     height: 100%;

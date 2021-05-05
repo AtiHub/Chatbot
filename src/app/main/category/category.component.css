@@ -1,0 +1,50 @@
+.main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    box-sizing: border-box;
+}
+
+.category {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.category button {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #33cc33;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    transition: 0.1s;
+}
+
+.category button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #33cc33;
+}
+
+.arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid #33cc33;
+}

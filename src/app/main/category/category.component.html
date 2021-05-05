@@ -1,1 +1,6 @@
-<p>category works!</p>
+<div class="main">
+    <div class="category" *ngFor="let category of categories">
+        <button>{{category.id}}: {{category.text}}</button>
+        <!--<div class="arrow-right"></div>-->
+    </div>
+</div>

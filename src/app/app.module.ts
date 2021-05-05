@@ -11,6 +11,8 @@ import { AboutComponent } from './about/about.component';
 import { CategoryComponent } from './main/category/category.component';
 import { SuggestionComponent } from './main/suggestion/suggestion.component';
 import { ChatbotComponent } from './main/chatbot/chatbot.component';
+import { ChatbotDataService } from './chatbot-data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,12 @@ import { ChatbotComponent } from './main/chatbot/chatbot.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ChatbotDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
