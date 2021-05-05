@@ -1,3 +1,20 @@
 <div class="main">
-    //TODO: HEADER STUFF
+    <div class="logo">
+        <img class="logo" src="/assets/img/logo.png" alt="image">
+    </div>
+    <div class="nav-bar">
+        <div class="nav-bar-item">
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        </div>
+        <div class="nav-bar-item">
+            <a routerLink="/faq" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">FAQ</a>
+        </div>
+        <div class="nav-bar-item">
+            <a routerLink="/askus" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Ask Us</a>
+        </div>
+        <div class="nav-bar-item">
+            <a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About</a>
+        </div>
+    </div>
+
 </div>

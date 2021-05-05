@@ -1,0 +1,6 @@
+div.main {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    width: 100%;
+}
