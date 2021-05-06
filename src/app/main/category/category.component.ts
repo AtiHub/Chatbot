@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Pipe, PipeTransform } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, Pipe, PipeTransform } from '@angular/core';
 import { ICategory } from 'src/app/data-types';
 
 @Component({
@@ -9,11 +9,19 @@ import { ICategory } from 'src/app/data-types';
 export class CategoryComponent implements OnInit {
 
   @Input() public categories: ICategory[] = [];
+  @Output() public selectedCategoryEmitter = new EventEmitter();
+  private selectedCategoryId: number | null = null;
+  
   public filterString = "";
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  setCategory(event: any){
+    this.selectedCategoryId = event.target.id;
+    this.selectedCategoryEmitter.emit(this.selectedCategoryId);
   }
 
 }

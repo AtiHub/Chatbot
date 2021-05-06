@@ -3,11 +3,12 @@
         Categories
     </div>
     <div class="search-bar">
+        <i class="fa fa-search search-icon"></i>
         <input [(ngModel)]="filterString" class="search-box" type="text" placeholder="Search">
     </div>
     <div class="categories">
         <div class="category" *ngFor="let category of categories | searchCategory: filterString">
-            <button>{{category.id}}: {{category.text}}</button>
+            <button id={{category.id}} (click)="setCategory($event)">{{category.id}}: {{category.text}}</button>
             <!--<div class="arrow-right"></div>-->
         </div>
     </div>

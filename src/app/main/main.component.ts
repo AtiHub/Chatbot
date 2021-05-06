@@ -10,11 +10,16 @@ import { ICategory } from '../data-types';
 export class MainComponent implements OnInit {
 
   public categories: ICategory[] = [];
+  public selectedCategoryId: number | null = null;
 
   constructor(private _chatbotDataService: ChatbotDataService) { }
 
   ngOnInit(): void {
     this._chatbotDataService.getCategories().subscribe(data => this.categories = data, err => console.log(err));
+  }
+
+  getSelectedCategory($event: any) {
+    this.selectedCategoryId = $event;
   }
 
 }

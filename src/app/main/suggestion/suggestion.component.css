@@ -1,0 +1,25 @@
+.main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.title {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: left;
+    align-items: center;
+    height: 46px;
+    min-height: 46px;
+    width: 100%;
+    padding-left: 10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #0066ff;
+    box-sizing: border-box;
+    background-color: #e6e6e6;
+    font-weight: 600;
+}
