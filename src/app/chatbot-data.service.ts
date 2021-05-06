@@ -16,11 +16,15 @@ export class ChatbotDataService {
   
   constructor(private http: HttpClient) { }
 
-  getCountries(): Observable<IQuestion[]>{
+  getCategories(): Observable<ICategory[]>{
+    return this.http.get<ICategory[]>(this.categoriesUrl);
+  }
+
+  getQuestions(): Observable<IQuestion[]>{
     return this.http.get<IQuestion[]>(this.questionsUrl);
   }
 
-  getCategories(): Observable<ICategory[]>{
-    return this.http.get<ICategory[]>(this.categoriesUrl);
+  getQuestionsByCategoryId(id: number): Observable<IQuestion[]> {
+    return this.http.get<IQuestion[]>(this.questionsUrl + "/byCategoryId/" + id)
   }
 }

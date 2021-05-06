@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IQuestion } from 'src/app/data-types';
 
 @Component({
   selector: 'app-suggestion',
@@ -7,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuggestionComponent implements OnInit {
 
-  
+  @Input() public questions: IQuestion[] = [];
+  public isSelectedCategory: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  askQuestion(event: any){
+
   }
 
 }

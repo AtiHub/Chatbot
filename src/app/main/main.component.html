@@ -1,9 +1,9 @@
 <div class="main">
     <div class="category">
-        <app-category [categories]="categories" (selectedCategoryEmitter)="getSelectedCategory($event)"></app-category>
+        <app-category [categories]="categories" (selectedCategoryEmitter)="selectCategory($event)"></app-category>
     </div>
     <div class="suggestion">
-        <app-suggestion></app-suggestion>
+        <app-suggestion [questions]="questions"></app-suggestion>
     </div>
     <div class="chatbot">
         <app-chatbot></app-chatbot>
