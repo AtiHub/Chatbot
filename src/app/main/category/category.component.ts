@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { ICategory } from 'src/app/data-types';
 
 @Component({
@@ -9,10 +9,22 @@ import { ICategory } from 'src/app/data-types';
 export class CategoryComponent implements OnInit {
 
   @Input() public categories: ICategory[] = [];
+  public filterString = "";
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+}
+
+@Pipe({
+  name: 'searchCategory'
+})
+export class SearchCategoryPipe implements PipeTransform {
+  public transform(value: any[], filterString: string) {
+    if (!filterString) return value;
+    var filteredList = value.filter(item => item.text.toLowerCase().includes(filterString.toLowerCase()));
+    return filteredList;
+  }
 }

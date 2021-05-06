@@ -8,11 +8,12 @@ import { HeaderComponent } from './header/header.component';
 import { FaqComponent } from './faq/faq.component';
 import { AskUsComponent } from './ask-us/ask-us.component';
 import { AboutComponent } from './about/about.component';
-import { CategoryComponent } from './main/category/category.component';
+import { CategoryComponent, SearchCategoryPipe } from './main/category/category.component';
 import { SuggestionComponent } from './main/suggestion/suggestion.component';
 import { ChatbotComponent } from './main/chatbot/chatbot.component';
 import { ChatbotDataService } from './chatbot-data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,12 +25,14 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     CategoryComponent,
     SuggestionComponent,
-    ChatbotComponent
+    ChatbotComponent,
+    SearchCategoryPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     ChatbotDataService

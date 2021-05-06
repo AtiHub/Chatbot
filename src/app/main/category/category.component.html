@@ -1,6 +1,14 @@
 <div class="main">
-    <div class="category" *ngFor="let category of categories">
-        <button>{{category.id}}: {{category.text}}</button>
-        <!--<div class="arrow-right"></div>-->
+    <div class="title">
+        Categories
+    </div>
+    <div class="search-bar">
+        <input [(ngModel)]="filterString" class="search-box" type="text" placeholder="Search">
+    </div>
+    <div class="categories">
+        <div class="category" *ngFor="let category of categories | searchCategory: filterString">
+            <button>{{category.id}}: {{category.text}}</button>
+            <!--<div class="arrow-right"></div>-->
+        </div>
     </div>
 </div>
