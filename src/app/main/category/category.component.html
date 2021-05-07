@@ -8,7 +8,7 @@
     </div>
     <div class="categories">
         <div class="category" *ngFor="let category of categories | searchCategory: filterString">
-            <button id={{category.id}} (click)="setCategory($event)">{{category.id}}: {{category.text}}</button>
+            <button id={{category.id}} (click)="setCategory($event)">{{category.text}}</button>
             <!--<div class="arrow-right"></div>-->
         </div>
     </div>

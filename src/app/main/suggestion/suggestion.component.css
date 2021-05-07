@@ -52,7 +52,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 10px;
+    padding: 0 10px;
     box-sizing: border-box;
 }
 
@@ -68,15 +68,14 @@
 
 .question button {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 20px 0;
+    padding: 20px 10px;
     border-style: solid;
-    border-width: 1px;
+    border-width: 0 0 1px 0;
     border-color: #0066ff;
-    border-radius: 4px;
     box-sizing: border-box;
     background-color: white;
     transition: 0.1s;
