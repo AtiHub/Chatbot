@@ -24,17 +24,44 @@
     font-weight: 600;
 }
 
-.info {
+.category {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     height: 46px;
     min-height: 46px;
     width: 100%;
-    padding-left: 10px;
+    padding-left: 0px;
     box-sizing: border-box;
-    background-color: #f2f2f2;
+    color: white;
+    background-color: #0066ff;
+}
+
+.category-text {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+button.category-close {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+    width: 46px;
+    border: 0px solid;
+    color: white;
+    background-color: #0066ff;
+}
+
+button.category-close:hover {
+    cursor: pointer;
 }
 
 .questions {

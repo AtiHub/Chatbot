@@ -2,11 +2,16 @@
     <div class="title">
         Suggestions
     </div>
-    <div *ngIf="isSelectedCategory === true" class="info">
-        kek
+    <div *ngIf="isCategorySelected === true" class="category">
+        <button class="category-close" (click)="closeCategory()">
+            <i class="fa fa-times fa-lg"></i>
+        </button>
+        <div class="category-text">
+            {{selectedCategoryText}}
+        </div>
     </div>
     <div class="questions">
-        <div class="question" *ngFor="let question of questions">
+        <div class="question" *ngFor="let question of displayQuestions">
             <button id={{question.id}} (click)="askQuestion($event)">{{question.text}}</button>
             <!--<div class="arrow-right"></div>-->
         </div>

@@ -109,6 +109,11 @@
     background-color: #33cc33;
 }
 
+.category button.selected {
+    color: white;
+    background-color: #33cc33;
+}
+
 .arrow-right {
     width: 0;
     height: 0;

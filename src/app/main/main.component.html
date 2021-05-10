@@ -1,11 +1,11 @@
 <div class="main">
     <div class="category">
-        <app-category [categories]="categories" (selectedCategoryEmitter)="selectCategory($event)"></app-category>
+        <app-category [categories]="categories" [isCategorySelected]="isCategorySelected" (selectedCategoryEmitter)="selectCategory($event)"></app-category>
     </div>
     <div class="suggestion">
-        <app-suggestion [questions]="questions"></app-suggestion>
+        <app-suggestion [displayQuestions]="displayQuestions" [isCategorySelected]="isCategorySelected" [selectedCategory]="selectedCategory" (closeCategoryEmitter)="closeCategory()"></app-suggestion>
     </div>
-    <div class="chatbot">
+    <div class=" chatbot ">
         <app-chatbot></app-chatbot>
     </div>
 </div>
