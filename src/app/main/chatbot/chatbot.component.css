@@ -1,0 +1,188 @@
+.main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.title {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: left;
+    align-items: center;
+    height: 46px;
+    min-height: 46px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid lightgray;
+    background-color: #e6e6e6;
+    font-weight: 600;
+}
+
+div.chatbot-logo {
+    height: 80%;
+    padding: 0 10px;
+}
+
+img.chatbot-logo {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+.chatbox {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: right;
+    align-items: center;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+}
+
+.messages {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    flex: 1;
+    width: 100%;
+    background-color: #f2f2f2;
+}
+
+.messages> :first-child {
+    margin-top: auto;
+}
+
+.message {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 0 0 20px 0;
+}
+
+.message-user {
+    justify-content: right;
+}
+
+.message:first-child {
+    padding-top: 20px;
+}
+
+.message-box {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    min-width: 5%;
+    max-width: 70%;
+    padding: 10px;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    background-color: white;
+}
+
+div.message-box-chatbot-logo {
+    width: 40px;
+    padding: 0 10px;
+}
+
+img.message-box-chatbot-logo {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+div.message-box-user-logo {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    padding: 0 10px;
+    color: #404040;
+}
+
+.left:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-right-color: darkgray;
+    border-left: 0;
+    margin-top: -6px;
+    margin-left: -6px;
+}
+
+.right:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-left-color: darkgray;
+    border-right: 0;
+    margin-top: -6px;
+    margin-right: -6px;
+}
+
+.input {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: right;
+    align-items: center;
+    min-height: 60px;
+    width: 100%;
+    padding: 0 0 0 10px;
+    box-sizing: border-box;
+    background-color: #e6e6e6;
+    border-top: 1px solid lightgray;
+}
+
+.input input {
+    flex: 1;
+    height: 40px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.input input:focus {
+    outline: none;
+    border-width: 1px;
+    border-color: gray;
+}
+
+.input button.microphone {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 80%;
+    width: 40px;
+    border: 0px solid;
+    color: #262626;
+    background-color: transparent;
+}
+
+.input button.microphone:hover {
+    cursor: pointer;
+}

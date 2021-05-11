@@ -1,1 +1,36 @@
-<p>chatbot works!</p>
+<div class="main">
+    <div class="title">
+        <div class="chatbot-logo">
+            <img class="chatbot-logo" src="/assets/img/chatbot.png" alt="image">
+        </div>
+        Bilgi Chatbot
+    </div>
+    <div class="chatbox">
+        <div #container class="messages">
+            <div class="message" [ngClass]="{'message-user': message.by == 'user'}" *ngFor="let message of messages">
+                <ng-container *ngIf="message.by == 'chatbot'">
+                    <div class="message-box-chatbot-logo">
+                        <img class="message-box-chatbot-logo" src="/assets/img/chatbot.png" alt="image">
+                    </div>
+                    <div class="message-box left">
+                        {{message.text}}
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="message.by == 'user'">
+                    <div class="message-box right">
+                        {{message.text}}
+                    </div>
+                    <div class="message-box-user-logo">
+                        <i class="fa fa-user fa-2x"></i>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <div class="input">
+            <input [(ngModel)]="inputText" type="text" placeholder="Ask Something">
+            <button class="microphone" (click)="scrollToBottom()">
+                <i class="fa fa-microphone fa-lg"></i>
+            </button>
+        </div>
+    </div>
+</div>

@@ -44,7 +44,8 @@ app-suggestion {
     flex-flow: row nowrap;
     height: 100%;
     width: 60%;
-    background-color: red;
+    background-color: white;
+    box-sizing: border-box;
 }
 
 app-chatbot {

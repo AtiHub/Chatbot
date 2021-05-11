@@ -17,3 +17,8 @@ export interface ICategory{
     id: number,
     text: string
 }
+
+export interface IMessage{
+    by: string,
+    text: string
+}
