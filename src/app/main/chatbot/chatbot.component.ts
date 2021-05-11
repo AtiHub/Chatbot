@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewChecked, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { IMessage } from 'src/app/data-types';
 
 @Component({
@@ -9,37 +9,27 @@ import { IMessage } from 'src/app/data-types';
 export class ChatbotComponent implements OnInit, AfterViewChecked {
 
   public inputText: string = "";
-  public messages: IMessage[] = [];
+  @Input() public messages: IMessage[] = [];
+  @Output() public chatbotEmitter = new EventEmitter();
 
   @ViewChild('container') container: any;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.messages.push({by: 'chatbot', text: "Merhaba! Sormak istediğiniz bir soru var mı?"});
-    this.messages.push({by: 'user', text: "Merhaba. Sormak istediğim bir soru var yok"});
-    this.messages.push({by: 'chatbot', text: "Tamam o zaman."});
-    this.messages.push({by: 'user', text: "Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı."});
-    this.messages.push({by: 'chatbot', text: "Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat."});
-    this.messages.push({by: 'user', text: "Merhaba. Sormak istediğim bir soru var yok"});
-    this.messages.push({by: 'chatbot', text: "Tamam o zaman."});
-    this.messages.push({by: 'user', text: "Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı."});
-    this.messages.push({by: 'chatbot', text: "Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat."});
-    this.messages.push({by: 'user', text: "Merhaba. Sormak istediğim bir soru var yok"});
-    this.messages.push({by: 'chatbot', text: "Tamam o zaman."});
-    this.messages.push({by: 'user', text: "Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı."});
-    this.messages.push({by: 'chatbot', text: "Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat."});
-    this.messages.push({by: 'user', text: "Merhaba. Sormak istediğim bir soru var yok"});
-    this.messages.push({by: 'chatbot', text: "Tamam o zaman."});
-    this.messages.push({by: 'user', text: "Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı."});
-    this.messages.push({by: 'chatbot', text: "Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat."});
+    
   }
 
   ngAfterViewChecked(): void {
     this.scrollToBottom();
   }
 
-  public scrollToBottom() {
+  askQuestion(text: any) {
+    this.chatbotEmitter.emit(text);
+    this.inputText = "";
+  }
+
+  scrollToBottom() {
     this.container.nativeElement.scrollTop = this.container.nativeElement.scrollHeight;
   }
 

@@ -12,7 +12,7 @@
     </div>
     <div class="questions">
         <div class="question" *ngFor="let question of displayQuestions">
-            <button id={{question.id}} (click)="askQuestion($event)">{{question.text}}</button>
+            <button id={{question.id}} (click)="askQuestion(question)">{{question.text}}</button>
             <!--<div class="arrow-right"></div>-->
         </div>
     </div>

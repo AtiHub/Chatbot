@@ -49,7 +49,9 @@ img.chatbot-logo {
     overflow-y: scroll;
     scrollbar-width: thin;
     flex: 1;
+    box-sizing: border-box;
     width: 100%;
+    padding: 0 20px;
     background-color: #f2f2f2;
 }
 
@@ -64,7 +66,7 @@ img.chatbot-logo {
     align-items: center;
     width: 100%;
     height: auto;
-    padding: 0 0 20px 0;
+    padding: 0 0 25px 0;
 }
 
 .message-user {
@@ -72,7 +74,7 @@ img.chatbot-logo {
 }
 
 .message:first-child {
-    padding-top: 20px;
+    padding-top: 25px;
 }
 
 .message-box {

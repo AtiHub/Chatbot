@@ -3,9 +3,9 @@
         <app-category [categories]="categories" [isCategorySelected]="isCategorySelected" (selectedCategoryEmitter)="selectCategory($event)"></app-category>
     </div>
     <div class="suggestion">
-        <app-suggestion [displayQuestions]="displayQuestions" [isCategorySelected]="isCategorySelected" [selectedCategory]="selectedCategory" (closeCategoryEmitter)="closeCategory()"></app-suggestion>
+        <app-suggestion [displayQuestions]="displayQuestions" [isCategorySelected]="isCategorySelected" [selectedCategory]="selectedCategory" (closeCategoryEmitter)="closeCategory()" (chatbotEmitter)="askQuestion($event)"></app-suggestion>
     </div>
     <div class=" chatbot ">
-        <app-chatbot></app-chatbot>
+        <app-chatbot [messages]="messages " (chatbotEmitter)="askQuestion($event) "></app-chatbot>
     </div>
 </div>

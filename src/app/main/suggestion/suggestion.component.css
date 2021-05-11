@@ -90,7 +90,7 @@ button.category-close:hover {
 }
 
 .question:last-child {
-    padding: 0 0 10px 0;
+    padding: 0 10px 10px 10px;
 }
 
 .question button {

@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="input">
-            <input [(ngModel)]="inputText" type="text" placeholder="Ask Something">
+            <input [(ngModel)]="inputText" #m type="text" placeholder="Ask Something" (keyup.enter)="askQuestion(m.value)">
             <button class="microphone" (click)="scrollToBottom()">
                 <i class="fa fa-microphone fa-lg"></i>
             </button>

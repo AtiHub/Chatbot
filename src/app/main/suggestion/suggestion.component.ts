@@ -14,6 +14,7 @@ export class SuggestionComponent implements OnInit {
   public selectedCategoryText: string = "";
 
   @Output() public closeCategoryEmitter = new EventEmitter();
+  @Output() public chatbotEmitter = new EventEmitter();
 
   constructor() { }
 
@@ -26,8 +27,8 @@ export class SuggestionComponent implements OnInit {
     }
   }
 
-  askQuestion(event: any){
-
+  askQuestion(question: IQuestion){
+    this.chatbotEmitter.emit(question.text);
   }
 
   closeCategory(){

@@ -27,4 +27,8 @@ export class ChatbotDataService {
   getQuestionsByCategoryId(id: number): Observable<IQuestion[]> {
     return this.http.get<IQuestion[]>(this.questionsUrl + "/byCategoryId/" + id)
   }
+
+  postChatbot(questionText: string) {
+    return this.http.post<IAnswer>(this.chatbotUrl, {text: questionText});
+  }
 }

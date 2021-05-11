@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { ChatbotDataService } from '../chatbot-data.service';
-import { ICategory, IQuestion } from '../data-types';
+import { ICategory, IMessage, IQuestion } from '../data-types';
 
 @Component({
   selector: 'app-main',
@@ -17,13 +17,33 @@ export class MainComponent implements OnInit {
   public questions: IQuestion[] = [];
   public displayQuestions: IQuestion[] = [];
 
+  public messages: IMessage[] = [];
+
   constructor(private _chatbotDataService: ChatbotDataService) { }
 
   ngOnInit(): void {
     this._chatbotDataService.getCategories().subscribe(data => this.categories = data, err => console.log(err));
     this._chatbotDataService.getQuestions().subscribe(data => {
       this.questions = data;
-      this.setRandomQuestions();}, err => console.log(err));
+      this.setRandomQuestions();
+    }, err => console.log(err));
+    this.messages.push({by: 'chatbot', text: "Merhaba! Sormak istediğiniz bir soru var mı?"});
+    this.messages.push({by: 'user', text: "Merhaba. Sormak istediğim bir soru var yok"});
+    this.messages.push({by: 'chatbot', text: "Tamam o zaman."});
+    this.messages.push({by: 'user', text: "Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı."});
+    this.messages.push({by: 'chatbot', text: "Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat."});
+    this.messages.push({by: 'user', text: "Merhaba. Sormak istediğim bir soru var yok"});
+    this.messages.push({by: 'chatbot', text: "Tamam o zaman."});
+    this.messages.push({by: 'user', text: "Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı."});
+    this.messages.push({by: 'chatbot', text: "Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat."});
+    this.messages.push({by: 'user', text: "Merhaba. Sormak istediğim bir soru var yok"});
+    this.messages.push({by: 'chatbot', text: "Tamam o zaman."});
+    this.messages.push({by: 'user', text: "Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı."});
+    this.messages.push({by: 'chatbot', text: "Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat."});
+    this.messages.push({by: 'user', text: "Merhaba. Sormak istediğim bir soru var yok"});
+    this.messages.push({by: 'chatbot', text: "Tamam o zaman."});
+    this.messages.push({by: 'user', text: "Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı."});
+    this.messages.push({by: 'chatbot', text: "Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat."});
   }
 
   selectCategory($event: any) {
@@ -55,6 +75,14 @@ export class MainComponent implements OnInit {
     this.selectedCategoryId = null;
     this.selectedCategory = undefined;
     this.setRandomQuestions();
+  }
+
+  askQuestion($event: any){
+    var questionText: string = $event;
+    this._chatbotDataService.postChatbot(questionText).subscribe(data => {
+      this.messages.push({by: 'user', text: questionText} as IMessage);
+      setTimeout(() => this.messages.push({by: 'chatbot', text: data.text} as IMessage), 1000);
+    }, err => console.log(err));
   }
 
 }
