@@ -1,1 +1,21 @@
-<p>faq works!</p>
+<div class="main">
+    <div class="title">
+        <div class="title-content">Frequently Asked Questions</div>
+    </div>
+    <div class="content">
+        <div class="category" *ngFor="let category of categories">
+            <div class="category-title">{{category.text}}</div>
+            <div class="faq" *ngFor="let faq of faqs | filterFaq: category.id">
+                <div class="question">
+                    <div *ngIf="faq.id == selectedFaqId; then minus else plus"></div>
+                    <ng-template #plus><i class="fa fa-plus" style="padding: 0 5px;"></i></ng-template>
+                    <ng-template #minus><i class="fa fa-minus" style="padding: 0 5px;"></i></ng-template>
+                    <button [id]="faq.id" class="question-button" (click)="select($event)">{{faq.question.text}}</button>
+                </div>
+                <div [id]="'a' + faq.id" class="answer" [ngClass]="{'answer-show': faq.id == selectedFaqId}">
+                    {{faq.question.answer.text}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

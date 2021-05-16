@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { HeaderComponent } from './header/header.component';
-import { FaqComponent } from './faq/faq.component';
+import { FaqComponent, FaqPipe } from './faq/faq.component';
 import { AskUsComponent } from './ask-us/ask-us.component';
 import { AboutComponent } from './about/about.component';
 import { CategoryComponent, SearchCategoryPipe } from './main/category/category.component';
@@ -26,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     CategoryComponent,
     SuggestionComponent,
     ChatbotComponent,
-    SearchCategoryPipe
+    SearchCategoryPipe,
+    FaqPipe
   ],
   imports: [
     BrowserModule,

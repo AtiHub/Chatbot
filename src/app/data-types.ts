@@ -22,3 +22,9 @@ export interface IMessage{
     by: string,
     text: string
 }
+
+export interface IFAQ{
+    id: number,
+    questionId: number,
+    question: IQuestion
+}
