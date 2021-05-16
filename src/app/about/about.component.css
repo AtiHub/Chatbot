@@ -1,0 +1,28 @@
+.main {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    width: 100%;
+}
+
+.title {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    font-size: 30px;
+    color: white;
+    background-color: #E52B28;
+}
+
+.title-content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: left;
+    align-items: center;
+    box-sizing: border-box;
+    width: 70%;
+    padding: 0 10px;
+}

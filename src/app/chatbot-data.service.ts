@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { IQuestion, IAnswer, ICategory, IFAQ } from './data-types';
+import { IQuestion, IAnswer, ICategory, IFAQ, IAskUs } from './data-types';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,7 @@ export class ChatbotDataService {
   private categoriesUrl = "http://localhost:7256/api/categories";
   private chatbotUrl = "http://localhost:7256/api/chatbot";
   private faqUrl = "http://localhost:7256/api/FAQs";
+  private askUsUrl = "http://localhost:7256/api/askUs";
   
   constructor(private http: HttpClient) { }
 
@@ -35,5 +36,9 @@ export class ChatbotDataService {
 
   getFAQs(): Observable<IFAQ[]> {
     return this.http.get<IFAQ[]>(this.faqUrl);
+  }
+
+  postAskUs(askUs: IAskUs){
+    return this.http.post<IAskUs>(this.askUsUrl, askUs);
   }
 }

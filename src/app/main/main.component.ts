@@ -55,7 +55,7 @@ export class MainComponent implements OnInit {
 
   setRandomQuestions(){
     var arr = this.questions;
-    var n = 10;
+    var n = 15;
     var result = new Array(n),
         len = arr.length,
         taken = new Array(len);

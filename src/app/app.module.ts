@@ -13,7 +13,7 @@ import { SuggestionComponent } from './main/suggestion/suggestion.component';
 import { ChatbotComponent } from './main/chatbot/chatbot.component';
 import { ChatbotDataService } from './chatbot-data.service';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     ChatbotDataService

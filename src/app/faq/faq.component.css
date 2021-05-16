@@ -44,6 +44,8 @@
     flex-flow: column nowrap;
     align-items: center;
     width: 70%;
+    box-sizing: border-box;
+    border-left: 1px gray solid;
 }
 
 .category-title {

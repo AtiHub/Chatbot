@@ -28,3 +28,12 @@ export interface IFAQ{
     questionId: number,
     question: IQuestion
 }
+
+export interface IAskUs{
+    id?: number,
+    email: string,
+    firstname: string,
+    lastname: string,
+    text: string,
+    answered: boolean
+}

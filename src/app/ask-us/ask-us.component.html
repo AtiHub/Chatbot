@@ -1,1 +1,32 @@
-<p>ask-us works!</p>
+<div class="main">
+    <div class="title">
+        <div class="title-content">Ask Us</div>
+    </div>
+    <div class="content">
+        <form class="form" [formGroup]="askUsForm">
+            <div class="field">
+                <div class="field-title">Email:</div>
+                <input formControlName="email" type="text" class="input">
+                <div *ngIf="email?.invalid && email?.touched" class="invalid"><i class="fa fa-times-circle" style="padding: 0 5px;"></i>Email is Required</div>
+            </div>
+            <div class="field">
+                <div class="field-title">Firstname:</div>
+                <input formControlName="firstname" type="text" class="input">
+                <div *ngIf="firstname?.invalid && firstname?.touched" class="invalid"><i class="fa fa-times-circle" style="padding: 0 5px;"></i>Firstname is Required</div>
+            </div>
+            <div class="field">
+                <div class="field-title">Lastname:</div>
+                <input formControlName="lastname" type="text" class="input">
+                <div *ngIf="lastname?.invalid && lastname?.touched" class="invalid"><i class="fa fa-times-circle" style="padding: 0 5px;"></i>Lastname is Required</div>
+            </div>
+            <div class="field">
+                <div class="field-title">Question:</div>
+                <textarea formControlName="text" type="text" class="textarea"></textarea>
+                <div *ngIf="text?.invalid && text?.touched" class="invalid"><i class="fa fa-times-circle" style="padding: 0 5px;"></i>Question is Required (Minimum size: 10)</div>
+            </div>
+            <div class="field">
+                <button [disabled]="askUsForm.invalid" (click)="sendQuestion()">Send Question</button>
+            </div>
+        </form>
+    </div>
+</div>
