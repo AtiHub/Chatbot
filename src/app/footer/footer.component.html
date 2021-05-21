@@ -1,0 +1,18 @@
+<div class="main">
+    <div class="info">
+        <div class="info-text">Website developed by Atakan Acar</div>
+        <a class="info-link" href="https://github.com/AtiHub" target="_blank"><i class="fa fa-github-square fa-lg"></i></a>
+        <a class="info-link" href="https://www.linkedin.com/in/atakan-acar" target="_blank"><i class="fa fa-linkedin-square fa-lg"></i></a>
+    </div>
+    <div class="info">
+        <div class="info-text">Istanbul Bilgi University</div>
+        <a class="info-link" href="https://www.instagram.com/bilgiofficial" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>
+        <a class="info-link" href="https://www.facebook.com/istanbulbilgiuniversitesi" target="_blank"><i class="fa fa-facebook-square fa-lg"></i></a>
+        <a class="info-link" href="https://twitter.com/BiLGiOfficial" target="_blank"><i class="fa fa-twitter-square fa-lg"></i></a>
+    </div>
+    <div class="account">
+        <a *ngIf="!isLoggedIn" routerLink="/login">LogIn<i class="fa fa-sign-in fa-lg" style="padding: 0 4px;"></i></a>
+        <div class="account-text" *ngIf="isLoggedIn">Logged in as {{user.firstName}} {{user.lastName}}</div>
+        <button *ngIf="isLoggedIn" (click)="logout()">LogOut<i class="fa fa-sign-out fa-lg" style="padding: 0 4px;"></i></button>
+    </div>
+</div>

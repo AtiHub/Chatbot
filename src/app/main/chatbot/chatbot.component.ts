@@ -25,8 +25,10 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
   }
 
   askQuestion(text: any) {
-    this.chatbotEmitter.emit(text);
-    this.inputText = "";
+    if(text != "") {
+      this.chatbotEmitter.emit(text);
+      this.inputText = "";
+    }
   }
 
   scrollToBottom() {

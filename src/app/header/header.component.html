@@ -12,6 +12,12 @@
         <div class="nav-bar-item">
             <a routerLink="/askus" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Ask Us</a>
         </div>
+        <div class="nav-bar-item" *ngIf="isLoggedIn && (user.role === 'Staff' || user.role === 'Admin')">
+            <a routerLink="/answerhub" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Answer Hub</a>
+        </div>
+        <div class="nav-bar-item" *ngIf="isLoggedIn && user.role === 'Admin'">
+            <a routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Admin</a>
+        </div>
         <div class="nav-bar-item">
             <a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About</a>
         </div>

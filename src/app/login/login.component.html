@@ -1,0 +1,28 @@
+<div class="main">
+    <div class="panel">
+        <div class="title">
+            LogIn
+        </div>
+        <form class="form" [formGroup]="loginForm">
+            <div class="field" *ngIf="wrong">
+                <div class="error"><i class="fa fa-times-circle" style="padding: 0 5px 0 0;"></i>Username or password is incorrect</div>
+            </div>
+            <div class="field" *ngIf="error">
+                <div class="error"><i class="fa fa-times-circle" style="padding: 0 5px 0 0;"></i>Something went wrong</div>
+            </div>
+            <div class="field">
+                <div class="field-title">Email:</div>
+                <input formControlName="email" type="text" class="input">
+                <div *ngIf="email?.invalid && email?.touched" class="invalid"><i class="fa fa-times-circle" style="padding: 0 5px;"></i>Email is Required</div>
+            </div>
+            <div class="field">
+                <div class="field-title">Password:</div>
+                <input formControlName="password" type="password" class="input">
+                <div *ngIf="password?.invalid && password?.touched" class="invalid"><i class="fa fa-times-circle" style="padding: 0 5px;"></i>Password is Required</div>
+            </div>
+            <div class="field">
+                <button [disabled]="loginForm.invalid" (click)="login()">LogIn</button>
+            </div>
+        </form>
+    </div>
+</div>

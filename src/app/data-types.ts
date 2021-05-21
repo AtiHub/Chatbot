@@ -37,3 +37,13 @@ export interface IAskUs{
     text: string,
     answered: boolean
 }
+
+export interface IUser {
+    id: number;
+    role: string;
+    email: string;
+    password: string;
+    firstName: string;
+    lastName: string;
+    token: string;
+}
