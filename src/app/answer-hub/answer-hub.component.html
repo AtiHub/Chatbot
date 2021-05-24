@@ -1,1 +1,76 @@
-<p>answer-hub works!</p>
+<div class="main">
+    <div class="title">
+        <div class="title-content">Answer Hub</div>
+    </div>
+    <div class="content">
+        <div class="questions">
+            <div class="category non-answered">
+                <div class="category-title">Non-Answered</div>
+                <div class="category-content">
+                    <div class="ask-us" *ngFor="let askUs of nonAnswered; index as x">
+                        <div class="question">
+                            <button [id]="askUs.id" class="question-button" [ngClass]="{'question-button-selected': askUs.id == selectedAskUsId}" (click)="select($event)">
+                                <div *ngIf="askUs.id == selectedAskUsId; then minus else plus"></div>
+                                <ng-template #plus><div class="icon"><i class="fa fa-plus fa-lg" style="padding: 0 5px;"></i></div></ng-template>
+                                <ng-template #minus><div class="icon"><i class="fa fa-minus fa-lg" style="padding: 0 5px;"></i></div></ng-template>
+                                <div class="question-column">
+                                    <div class="question-row">Sent by</div>
+                                    <div class="question-row">{{askUs.firstname}} {{askUs.lastname}}</div>
+                                </div>
+                                <div class="question-column">
+                                    <div class="question-row">Email</div>
+                                    <div class="question-row">{{askUs.email}}</div>
+                                </div>
+                                <div class="question-column">
+                                    <div class="question-row">Answered</div>
+                                    <div class="question-row"><i class="fa fa-times fa-lg" style="padding: 0 5px; color: red"></i></div>
+                                </div>
+                            </button>
+                        </div>
+                        <div [id]="'a' + askUs.id" class="answer" [ngClass]="{'answer-show': askUs.id == selectedAskUsId}">
+                            <div class="answered-text"><span style="font-weight: bold;">Question:&nbsp;</span> {{askUs.text}}</div>
+                            <textarea [(ngModel)]="nonAnsweredTextareas[x]" type="text" class="answer-textarea"></textarea>
+                            <div class="button">
+                                <button (click)="sendAnswer(askUs.id, x, false)">Send Answer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="category answered">
+                <div class="category-title">Answered</div>
+                <div class="category-content">
+                    <div class="ask-us" *ngFor="let askUs of answered; index as x">
+                        <div class="question">
+                            <button [id]="askUs.id" class="question-button" [ngClass]="{'question-button-selected': askUs.id == selectedAskUsId}" (click)="select($event)">
+                                <div *ngIf="askUs.id == selectedAskUsId; then minus else plus"></div>
+                                <ng-template #plus><div class="icon"><i class="fa fa-plus fa-lg" style="padding: 0 5px;"></i></div></ng-template>
+                                <ng-template #minus><div class="icon"><i class="fa fa-minus fa-lg" style="padding: 0 5px;"></i></div></ng-template>
+                                <div class="question-column">
+                                    <div class="question-row">Sent by</div>
+                                    <div class="question-row">{{askUs.firstname}} {{askUs.lastname}}</div>
+                                </div>
+                                <div class="question-column">
+                                    <div class="question-row">Email</div>
+                                    <div class="question-row">{{askUs.email}}</div>
+                                </div>
+                                <div class="question-column">
+                                    <div class="question-row">Answered</div>
+                                    <div class="question-row"><i class="fa fa-check fa-lg" style="padding: 0 5px; color: green"></i></div>
+                                </div>
+                            </button>
+                        </div>
+                        <div [id]="'a' + askUs.id" class="answer" [ngClass]="{'answer-show': askUs.id == selectedAskUsId}">
+                            <div class="answered-text"><span style="font-weight: bold;">Question:&nbsp;</span> {{askUs.text}}</div>
+                            <div class="answered-text"><span style="font-weight: bold;">Answer:&nbsp;</span> {{askUs.answer}}</div>
+                            <textarea [(ngModel)]="answeredTextareas[x]" type="text" class="textarea-answer"></textarea>
+                            <div class="button">
+                                <button (click)="sendAnswer(askUs.id, x, true)">Send Answer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

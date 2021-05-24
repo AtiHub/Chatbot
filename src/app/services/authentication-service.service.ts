@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { IUser } from '../data-types';
 import { apiUrl } from '../urls';
+import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -13,7 +14,7 @@ export class AuthenticationService {
 
     public apiUrl = apiUrl;
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private router: Router) {
         this.currentUserSubject = new BehaviorSubject<IUser>(JSON.parse(localStorage.getItem('currentUser') as any));
         this.currentUser = this.currentUserSubject.asObservable();
     }
@@ -36,6 +37,7 @@ export class AuthenticationService {
         // remove user from local storage and set current user to null
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null as any);
+        this.router.navigate(['/']);
     }
 
     isLoggedIn() {

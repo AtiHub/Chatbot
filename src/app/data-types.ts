@@ -35,7 +35,8 @@ export interface IAskUs{
     firstname: string,
     lastname: string,
     text: string,
-    answered: boolean
+    answered: boolean,
+    answer?: string
 }
 
 export interface IUser {

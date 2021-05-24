@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ChatbotDataService } from '../chatbot-data.service';
+import { ChatbotDataService } from '../services/chatbot-data.service';
 import { ICategory, IFAQ, IMessage, IQuestion, IAskUs } from '../data-types';
 
 @Component({

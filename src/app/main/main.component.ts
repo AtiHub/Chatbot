@@ -1,5 +1,5 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
-import { ChatbotDataService } from '../chatbot-data.service';
+import { ChatbotDataService } from '../services/chatbot-data.service';
 import { ICategory, IMessage, IQuestion } from '../data-types';
 
 @Component({

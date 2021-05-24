@@ -11,8 +11,8 @@ import { AboutComponent } from './about/about.component';
 import { CategoryComponent, SearchCategoryPipe } from './main/category/category.component';
 import { SuggestionComponent } from './main/suggestion/suggestion.component';
 import { ChatbotComponent } from './main/chatbot/chatbot.component';
-import { ChatbotDataService } from './chatbot-data.service';
-import { HttpClientModule } from '@angular/common/http';
+import { ChatbotDataService } from './services/chatbot-data.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationService } from './services/authentication-service.service';
 import { LoginComponent } from './login/login.component';
@@ -20,6 +20,8 @@ import { AdminComponent } from './admin/admin.component';
 import { UserService } from './services/user-service.service';
 import { FooterComponent } from './footer/footer.component';
 import { AnswerHubComponent } from './answer-hub/answer-hub.component';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { ErrorInterceptor } from './helpers/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { AnswerHubComponent } from './answer-hub/answer-hub.component';
     ReactiveFormsModule
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     ChatbotDataService,
     AuthenticationService,
     UserService
