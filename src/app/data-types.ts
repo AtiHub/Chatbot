@@ -1,6 +1,5 @@
 export interface IQuestion{
     id: number,
-    name: string,
     categoryId: number,
     category: ICategory,
     answerId: number,
@@ -47,4 +46,12 @@ export interface IUser {
     firstName: string;
     lastName: string;
     token: string;
+}
+
+export interface IUserDb {
+    id: number;
+    role: string;
+    firstName: string;
+    lastName: string;
+    email: string;
 }

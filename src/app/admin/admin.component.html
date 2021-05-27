@@ -1,1 +1,28 @@
-<p>admin works!</p>
+<div class="main">
+    <div class="title">
+        <div class="title-content">Admin Panel</div>
+    </div>
+    <div class="nav-bar">
+        <div class="nav-bar-item">
+            <a routerLink="/admin/category" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Category</a>
+        </div>
+        <div class="nav-bar-item">
+            <a routerLink="/admin/question" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Question</a>
+        </div>
+        <div class="nav-bar-item">
+            <a routerLink="/admin/answer" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Answer</a>
+        </div>
+        <div class="nav-bar-item">
+            <a routerLink="/admin/faq" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">FAQ</a>
+        </div>
+        <div class="nav-bar-item">
+            <a routerLink="/admin/askus" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Askus</a>
+        </div>
+        <div class="nav-bar-item">
+            <a routerLink="/admin/user" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">User</a>
+        </div>
+    </div>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

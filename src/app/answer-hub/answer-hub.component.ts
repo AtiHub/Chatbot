@@ -42,7 +42,9 @@ export class AnswerHubComponent implements OnInit {
   }
 
   sendAnswer(id: any, x: number, answered: boolean){
-    this._chatbotDataService.answerAskUs(id, (answered ? this.answeredTextareas[x]: this.nonAnsweredTextareas[x])).subscribe(data => alert("Answer sent!"), err => console.log(err));
-    this.router.navigate(['/answerhub']);
+    this._chatbotDataService.answerAskUs(id, (answered ? this.answeredTextareas[x]: this.nonAnsweredTextareas[x])).subscribe(data => {
+      alert("Answer sent!");
+      this.router.navigate(['/']).then(() => { this.router.navigate(['/answerhub']); });
+    }, err => console.log(err));
   }
 }

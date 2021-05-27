@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IUser } from '../data-types';
+import { IUser, IUserDb } from '../data-types';
 import { apiUrl } from '../urls';
 
 @Injectable({ providedIn: 'root' })
@@ -10,18 +10,18 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get<IUser[]>(this.apiUrl + '/users');
+    return this.http.get<IUserDb[]>(this.apiUrl + '/users');
   }
 
   getById(id: number) {
-    return this.http.get<IUser>(this.apiUrl + '/users/' + id)
+    return this.http.get<IUserDb>(this.apiUrl + '/users/' + id)
   }
 
-  register(user: IUser) {
+  register(user: any) {
     return this.http.post(this.apiUrl + '/users/register', user);
   }
 
-  update(id: number, user: IUser) {
+  update(id: number, user: any) {
     return this.http.put(this.apiUrl + '/users/' + id, user);
   }
 

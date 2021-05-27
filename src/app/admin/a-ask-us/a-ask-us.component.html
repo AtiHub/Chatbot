@@ -1,0 +1,73 @@
+<div class="content">
+    <div class="title">
+        <span>Ask Us</span>
+    </div>
+    <div class="loading" *ngIf="askUs.length == 0">
+        <div class="lds-dual-ring"></div>
+    </div>
+    <div class="list" *ngIf="askUs.length > 0">
+        <div class="list-item" *ngFor="let au of askUs; index as x">
+            <div class="au">
+                <button [id]="au.id" class="au-button" [ngClass]="{'au-button-selected': au.id == selectedAskUsId}" (click)="select($event)">
+                    <div *ngIf="au.id == selectedAskUsId; then minus else plus"></div>
+                    <ng-template #plus><div class="icon"><i class="fa fa-plus fa-lg" style="padding: 0 5px;"></i></div></ng-template>
+                    <ng-template #minus><div class="icon"><i class="fa fa-minus fa-lg" style="padding: 0 5px;"></i></div></ng-template>
+                    <div class="au-column">
+                        <div class="au-row">Id</div>
+                        <div class="au-row">{{au.id}}</div>
+                    </div>
+                    <div class="au-column">
+                        <div class="au-row">Email</div>
+                        <div class="au-row">{{au.email}}</div>
+                    </div>
+                    <div class="au-column">
+                        <div class="au-row">Firstname</div>
+                        <div class="au-row">{{au.firstname}}</div>
+                    </div>
+                    <div class="au-column">
+                        <div class="au-row">Lastname</div>
+                        <div class="au-row">{{au.lastname}}</div>
+                    </div>
+                    <div class="au-column">
+                        <div class="au-row">Text</div>
+                        <div class="au-row">{{au.text}}</div>
+                    </div>
+                    <div class="au-column">
+                        <div class="au-row">Answer</div>
+                        <div class="au-row">{{au.answer}}</div>
+                    </div>
+                </button>
+            </div>
+            <div [id]="'e' + au.id" class="edit" [ngClass]="{'edit-show': au.id == selectedAskUsId}">
+                <div class="inputs">
+                    <div class="input">
+                        <input [(ngModel)]="ids[x]" type="text" placeholder="Id" class="edit-input">
+                    </div>
+                    <div class="input">
+                        <input [(ngModel)]="emails[x]" type="text" placeholder="Email" class="edit-input">
+                    </div>
+                    <div class="input">
+                        <input [(ngModel)]="firstnames[x]" type="text" placeholder="Firstname" class="edit-input">
+                    </div>
+                    <div class="input">
+                        <input [(ngModel)]="lastnames[x]" type="text" placeholder="Lastname" class="edit-input">
+                    </div>
+                    <div class="input">
+                        <input [(ngModel)]="texts[x]" type="text" placeholder="Text" class="edit-input">
+                    </div>
+                    <div class="input">
+                        <input [(ngModel)]="answers[x]" type="text" placeholder="Answer" class="edit-input">
+                    </div>
+                </div>
+                <div class="buttons">
+                    <div class="button">
+                        <button (click)="putAskUs(x)">Edit<i class="fa fa-edit fa-lg" style="padding: 0 0 0 5px;"></i></button>
+                    </div>
+                    <div class="button">
+                        <button (click)="deleteAskUs(au.id)">Delete<i class="fa fa-times fa-lg" style="padding: 0 0 0 5px;"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

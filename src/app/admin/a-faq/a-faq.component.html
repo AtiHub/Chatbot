@@ -1,0 +1,60 @@
+<div class="content">
+    <div class="title">
+        <span>FAQs</span>
+        <button [id]="-1" (click)="select($event)" *ngIf="faqs.length > 0">Add<i class="fa fa-plus-circle fa-lg" style="padding: 0 0 0 5px;"></i></button>
+    </div>
+    <div class="loading" *ngIf="faqs.length == 0">
+        <div class="lds-dual-ring"></div>
+    </div>
+    <div class="list" *ngIf="faqs.length > 0">
+        <div class="list-item">
+            <div class="edit" [ngClass]="{'edit-show': selectedFaqId == -1}">
+                <div class="inputs">
+                    <div class="input">
+                        <input [(ngModel)]="newQuestionId" type="text" placeholder="Question Id" class="edit-input">
+                    </div>
+                </div>
+                <div class="buttons">
+                    <div class="button">
+                        <button (click)="postFAQ()">Add<i class="fa fa-plus" style="padding: 0 0 0 5px;"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list-item" *ngFor="let faq of faqs; index as x">
+            <div class="faq">
+                <button [id]="faq.id" class="faq-button" [ngClass]="{'faq-button-selected': faq.id == selectedFaqId}" (click)="select($event)">
+                    <div *ngIf="faq.id == selectedFaqId; then minus else plus"></div>
+                    <ng-template #plus><div class="icon"><i class="fa fa-plus fa-lg" style="padding: 0 5px;"></i></div></ng-template>
+                    <ng-template #minus><div class="icon"><i class="fa fa-minus fa-lg" style="padding: 0 5px;"></i></div></ng-template>
+                    <div class="faq-column">
+                        <div class="faq-row">Id</div>
+                        <div class="faq-row">{{faq.id}}</div>
+                    </div>
+                    <div class="faq-column">
+                        <div class="faq-row">Question Id</div>
+                        <div class="faq-row">{{faq.questionId}}</div>
+                    </div>
+                </button>
+            </div>
+            <div [id]="'e' + faq.id" class="edit" [ngClass]="{'edit-show': faq.id == selectedFaqId}">
+                <div class="inputs">
+                    <div class="input">
+                        <input [(ngModel)]="ids[x]" type="text" placeholder="Id" class="edit-input">
+                    </div>
+                    <div class="input">
+                        <input [(ngModel)]="questionIds[x]" type="text" placeholder="Question Id" class="edit-input">
+                    </div>
+                </div>
+                <div class="buttons">
+                    <div class="button">
+                        <button (click)="putFAQ(x)">Edit<i class="fa fa-edit fa-lg" style="padding: 0 0 0 5px;"></i></button>
+                    </div>
+                    <div class="button">
+                        <button (click)="deleteFAQ(faq.id)">Delete<i class="fa fa-times fa-lg" style="padding: 0 0 0 5px;"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

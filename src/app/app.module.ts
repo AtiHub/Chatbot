@@ -22,6 +22,13 @@ import { FooterComponent } from './footer/footer.component';
 import { AnswerHubComponent } from './answer-hub/answer-hub.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
+import { ACategoryComponent } from './admin/a-category/a-category.component';
+import { AQuestionComponent } from './admin/a-question/a-question.component';
+import { AAnswerComponent } from './admin/a-answer/a-answer.component';
+import { AAskUsComponent } from './admin/a-ask-us/a-ask-us.component';
+import { AFaqComponent } from './admin/a-faq/a-faq.component';
+import { AUserComponent } from './admin/a-user/a-user.component';
+import { AdminService } from './services/admin.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +46,13 @@ import { ErrorInterceptor } from './helpers/error.interceptor';
     LoginComponent,
     AdminComponent,
     FooterComponent,
-    AnswerHubComponent
+    AnswerHubComponent,
+    ACategoryComponent,
+    AQuestionComponent,
+    AAnswerComponent,
+    AAskUsComponent,
+    AFaqComponent,
+    AUserComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +66,8 @@ import { ErrorInterceptor } from './helpers/error.interceptor';
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     ChatbotDataService,
     AuthenticationService,
-    UserService
+    UserService,
+    AdminService
   ],
   bootstrap: [AppComponent]
 })
