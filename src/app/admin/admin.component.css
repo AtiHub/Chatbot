@@ -20,7 +20,7 @@
 .title-content {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
     width: 70%;

@@ -10,7 +10,7 @@
 .title {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
     height: 46px;
     min-height: 46px;
@@ -27,7 +27,7 @@
 .search-bar {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
     height: 46px;

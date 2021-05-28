@@ -20,7 +20,7 @@
 .title-content {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
     width: 70%;
@@ -57,7 +57,7 @@
 .category-title {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
     padding: 10px;
@@ -169,7 +169,7 @@
 .answer .button {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: right;
+    justify-content: flex-end;
     width: 100%;
     box-sizing: border-box;
     padding: 5px 0 0 0;

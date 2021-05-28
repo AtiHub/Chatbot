@@ -20,7 +20,7 @@
 .title-content {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
     width: 70%;
@@ -51,7 +51,7 @@
 .category-title {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
     padding: 10px;
@@ -71,14 +71,14 @@
 .question {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .question-button {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
     padding: 5px 0;
@@ -94,7 +94,7 @@
 .answer {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
     overflow-y: hidden;
     max-height: 0px;

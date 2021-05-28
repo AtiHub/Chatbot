@@ -10,7 +10,7 @@
 .title {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
     height: 46px;
     min-height: 46px;
@@ -35,7 +35,6 @@ img.chatbot-logo {
 .chatbox {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: right;
     align-items: center;
     flex: 1;
     min-height: 0;
@@ -62,7 +61,7 @@ img.chatbot-logo {
 .message {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     height: auto;
@@ -70,7 +69,7 @@ img.chatbot-logo {
 }
 
 .message-user {
-    justify-content: right;
+    justify-content: flex-end;
 }
 
 .message:first-child {
@@ -144,7 +143,7 @@ div.message-box-user-logo {
 .input {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: right;
+    justify-content: flex-end;
     align-items: center;
     min-height: 60px;
     width: 100%;
