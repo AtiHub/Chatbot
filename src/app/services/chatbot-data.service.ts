@@ -4,19 +4,22 @@ import { Observable } from 'rxjs';
 
 import { IQuestion, IAnswer, ICategory, IFAQ, IAskUs, IUser, IUserDb } from '../data-types';
 import { AuthenticationService } from './authentication-service.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatbotDataService {
 
-  private questionsUrl = "http://localhost:7256/api/questions";
-  private answersUrl = "http://localhost:7256/api/answers";
-  private categoriesUrl = "http://localhost:7256/api/categories";
-  private chatbotUrl = "http://localhost:7256/api/chatbot";
-  private faqUrl = "http://localhost:7256/api/FAQs";
-  private askUsUrl = "http://localhost:7256/api/askUs";
-  private userUrl = "http://localhost:7256/api/users";
+  public apiUrl = environment.apiUrl;
+
+  private questionsUrl = this.apiUrl + "/questions";
+  private answersUrl = this.apiUrl + "/answers";
+  private categoriesUrl = this.apiUrl + "/categories";
+  private chatbotUrl = this.apiUrl + "/chatbot";
+  private faqUrl = this.apiUrl + "/FAQs";
+  private askUsUrl = this.apiUrl + "/askUs";
+  private userUrl = this.apiUrl + "/users";
   
   constructor(private http: HttpClient, private authenticationService: AuthenticationService) { }
 

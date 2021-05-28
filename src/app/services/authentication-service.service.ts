@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { IUser } from '../data-types';
-import { apiUrl } from '../urls';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -12,7 +12,7 @@ export class AuthenticationService {
     public currentUser: Observable<IUser>;
     public isLogin = false;
 
-    public apiUrl = apiUrl;
+    public apiUrl = environment.apiUrl;
 
     constructor(private http: HttpClient, private router: Router) {
         this.currentUserSubject = new BehaviorSubject<IUser>(JSON.parse(localStorage.getItem('currentUser') as any));
