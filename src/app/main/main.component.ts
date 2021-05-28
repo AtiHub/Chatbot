@@ -27,23 +27,8 @@ export class MainComponent implements OnInit {
       this.questions = data;
       this.setRandomQuestions();
     }, err => console.log(err));
-    this.messages.push({by: 'chatbot', text: "Merhaba! Sormak istediğiniz bir soru var mı?"});
-    this.messages.push({by: 'user', text: "Merhaba. Sormak istediğim bir soru var yok"});
-    this.messages.push({by: 'chatbot', text: "Tamam o zaman."});
-    this.messages.push({by: 'user', text: "Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı."});
-    this.messages.push({by: 'chatbot', text: "Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat."});
-    this.messages.push({by: 'user', text: "Merhaba. Sormak istediğim bir soru var yok"});
-    this.messages.push({by: 'chatbot', text: "Tamam o zaman."});
-    this.messages.push({by: 'user', text: "Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı."});
-    this.messages.push({by: 'chatbot', text: "Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat."});
-    this.messages.push({by: 'user', text: "Merhaba. Sormak istediğim bir soru var yok"});
-    this.messages.push({by: 'chatbot', text: "Tamam o zaman."});
-    this.messages.push({by: 'user', text: "Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı."});
-    this.messages.push({by: 'chatbot', text: "Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat."});
-    this.messages.push({by: 'user', text: "Merhaba. Sormak istediğim bir soru var yok"});
-    this.messages.push({by: 'chatbot', text: "Tamam o zaman."});
-    this.messages.push({by: 'user', text: "Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı. Çok uzun bir yazı."});
-    this.messages.push({by: 'chatbot', text: "Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat. Çok uzun bir chat."});
+    this.messages.push({by: 'chatbot', text: "Merhaba! Ben Bilgi Chatbot."});
+    this.messages.push({by: 'chatbot', text: "Üniversitemiz hakkında sormak istediğiniz bir soru var mı?"});
   }
 
   selectCategory($event: any) {
